@@ -1,0 +1,24 @@
+class Box {
+    double h,w,d;
+
+     Box(double width,double height,double depth)
+    {
+        h=height;
+        w=width;
+        d=depth;
+    }
+    double volume()
+    { 
+      double v;
+      v=h*w*d;
+      return v;
+    }
+   
+    public static void main(String[] args) {
+       
+    Box x = new Box(1.1,2.1,3.1);
+    System.out.println(x.volume());
+
+    }
+
+}
