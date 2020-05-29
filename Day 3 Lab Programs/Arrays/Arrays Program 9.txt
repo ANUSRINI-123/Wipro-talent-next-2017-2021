@@ -1,0 +1,31 @@
+class C
+{
+  static void SumExc(int arr[],int a,int b)
+  {
+    int sum=0;
+    boolean flag=true;
+    for(int i=0;i<arr.length;i++)
+    {
+      if(arr[i]!=a && flag==true)
+      {
+        sum=sum+arr[i];
+      }
+      else if(arr[i]==a)
+      {
+        flag=false;
+      }
+      else if(arr[i]==b)
+      {
+        flag=true;
+      }
+    }
+    System.out.println(sum);
+  }
+  public static void main(String args[])
+  {
+    int arr[]={1,2,3,4,5,6};
+    int a=2;
+    int b=5;
+    SumExc(arr,a,b);
+  }
+}
