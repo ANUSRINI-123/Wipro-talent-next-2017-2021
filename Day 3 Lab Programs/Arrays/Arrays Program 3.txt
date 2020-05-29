@@ -1,0 +1,28 @@
+import java.util.Arrays; 
+
+class C{ 
+  
+     private static void check(int[] arr, int Check) 
+    { 
+        boolean test = false; 
+        for (int element : arr) { 
+            if (element == Check) { 
+                test = true; 
+                break; 
+            } 
+        } 
+  
+        System.out.println(test); 
+    } 
+  
+    public static void main(String[] args) 
+    { 
+ 
+        int arr[] = { 1,2,3,4,5 }; 
+        int Check = 5; 
+  
+        System.out.println( Arrays.toString(arr)); 
+  
+        check(arr, Check); 
+    } 
+} 
