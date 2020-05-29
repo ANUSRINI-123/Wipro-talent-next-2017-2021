@@ -1,0 +1,31 @@
+public class C
+{
+  public void MaxOccEle(int[] arr)
+  {
+    int count=0;
+    int n=0;
+    for(int i=0;i<arr.length;i++)
+    {
+      int count1=1;
+      for(int j=i+1;j<arr.length;j++)
+      {
+        if(arr[i]==arr[j])
+        {
+          count1++;
+        }
+      }
+      if(count<count1)
+      {
+        count=count1;
+        n=arr[i];
+      }
+    }
+    System.out.println(n);
+  }
+    public static void main(String args[])
+    {
+      int [] arr={1,2,3,4,1,1,2,1,1};
+      C m=new C();
+      m.MaxOccEle(arr);
+    }
+  }
