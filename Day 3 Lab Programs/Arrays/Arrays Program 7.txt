@@ -1,0 +1,29 @@
+import java.util.Scanner;
+ class C{
+	public static void main(String[] args){
+		int[] arr = new int[20];
+		int l,m;
+		int i;
+		Scanner sc = new Scanner(System.in);
+		int arr_size = sc.nextInt();
+	  	for(i=0;i<arr_size;++i)
+		{
+			arr[i] = sc.nextInt();
+		}
+		for(l=0;l<arr_size;++l)
+		{
+			for(m=l+1;m<arr_size;){
+				if(arr[l] == arr[m]){
+					for(int temp = m; temp<arr_size; ++temp){
+						arr[temp] = arr[temp+1];
+					}
+					arr_size = arr_size-1;		
+				}		
+				else
+					m++;		
+			}
+		}
+		for(i=0;i<arr_size;++i)
+			System.out.println(arr[i]);
+	}
+}
