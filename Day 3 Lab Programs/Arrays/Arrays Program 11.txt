@@ -1,0 +1,38 @@
+class C
+{
+  public static void main(String[] args)
+  {
+    if(args.length!=9)
+    {
+      System.out.println("Please Enter 9 Number");
+
+    }
+    else
+    {
+      int x=0;
+      int n[][]=new int[3][3];
+      for(int i=0;i<3;i++)
+      {
+        for(int j=0;j<3;j++)
+        {
+          n[i][j]=Integer.parseInt(args[x]);
+          x++;
+        }
+
+      } 
+      int max=0;
+      for(int i=0;i<3;i++)
+      {
+        for(int j=0;j<3;j++)
+        {
+          if(n[i][j]>max)
+          {
+            max=n[i][j];
+          }
+          
+        }
+      }
+      System.out.print("The Biggest Number In The Given Array Is "+max);
+    }
+  }
+}
