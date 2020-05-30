@@ -1,0 +1,53 @@
+class Fruit
+{
+    String name,taste,size;
+    Fruit(String x,String y,String z)
+    {
+        name = x;
+        taste =y;
+        size =z;
+    }
+    void eat()
+    {
+        System.out.print(name+" "+taste);
+    }
+
+}
+class Apple extends Fruit
+{
+    Apple(String x,String y,String z)
+    {
+    super(x,y,z);
+    
+}
+@Override
+void eat()
+{
+      System.out.print(name+" "+taste);
+}
+}
+class Orange extends Fruit
+{
+    Orange(String x,String y,String z)
+    {
+    super(x,y,z);
+    }
+ @Override
+void eat()
+{
+      System.out.print(name+" "+taste);
+}  
+    
+}
+class Fruitcheck
+{
+    public static void main(String args[])
+    {
+        Apple a =  new Apple("Apple","Sweet","Heart");
+        Orange o =  new Orange("Orange","Sweet","Round");
+        a.eat();
+        o.eat();
+    }
+}
+    
+    

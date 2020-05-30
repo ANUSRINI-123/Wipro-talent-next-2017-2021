@@ -1,0 +1,12 @@
+public class Strings6 {
+public static void main(String[] args) {
+		String a = "hii";
+		String b = "welcome";
+		String output;
+          if (a.length() < b.length()) 
+			output = a + b + a;
+		else
+			output = b + a + b;
+                 System.out.println(output);
+	}
+}

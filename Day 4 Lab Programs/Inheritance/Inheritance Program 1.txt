@@ -1,0 +1,50 @@
+class Animal
+{
+  public  Animal()
+  {
+    System.out.println("Result1");
+  } 
+  void eat()
+  {
+    System.out.println("Result2");
+  }
+  void sleep()
+  {
+    System.out.println("Result3");
+  }
+}
+class Bird extends Animal
+{
+    public Bird()
+    {
+      System.out.println("Result4");
+    }
+    @Override
+  
+    void eat()
+  {
+    System.out.println("Result2a");
+  }
+  void sleep()
+  { 
+    System.out.println("Result3a");
+  }
+    void fly()
+    {
+      System.out.println("Result5");
+    }
+
+}
+class Animal1
+{
+  public static void main(String args[])
+  {
+    Animal a=new Animal();
+    Bird b= new Bird();
+    a.eat();
+    a.sleep();
+    b.eat();
+    b.sleep();
+    b.fly();
+  }
+}
