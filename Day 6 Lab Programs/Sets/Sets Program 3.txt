@@ -1,0 +1,30 @@
+import java.util.Iterator;
+import java.util.TreeSet;
+
+public class Program3{
+
+	public static void main(String[] args) {
+		TreeSet<String> set = new TreeSet<>();
+		//Collection<String> set = new TreeSet<>(Collections.reverseOrder());
+		set.add("Anu");
+		set.add("Anu2");
+		set.add("Anu3");
+		set.add("Anu4");
+		
+		Iterator<String> it = set.iterator();
+		String query = "Ashwini";
+		boolean result = false;
+		
+		while (it.hasNext()) {
+			if (it.next().equals(query)) {
+				result = true;
+				break;
+			}
+		}
+		
+		if (result) System.out.println(query + " exists");
+		else System.out.println(query + " doesn't exist");
+
+	}
+
+}

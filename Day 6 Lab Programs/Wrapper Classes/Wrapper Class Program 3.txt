@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class Program3{
+
+	public static void main(String[] args) {
+		Scanner u = new Scanner(System.in);
+		
+		int input = u.nextInt();
+		
+		String output = String.format("%8s", Integer.toBinaryString(input)).replace(' ', '0');
+		System.out.println(output);
+
+	}
+
+}
