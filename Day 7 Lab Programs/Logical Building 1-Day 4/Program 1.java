@@ -1,6 +1,6 @@
 import java.io.*;
 import  java.util.*;
-Class UserMainCode
+class UserMainCode
 {
   public int isEven(int input1)
   {
