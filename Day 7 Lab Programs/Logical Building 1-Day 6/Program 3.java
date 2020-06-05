@@ -2,9 +2,9 @@ import java.io.*;
 import  java.util.*;
 class UserMainCode
 {
-public long nthFibonacci(int input1)
-{
-if(input1==1)
+	public long nthFibonacci(int input1)
+	{
+		if(input1==1)
 			return 0;
 		if(input1==2)
 			return 1;
