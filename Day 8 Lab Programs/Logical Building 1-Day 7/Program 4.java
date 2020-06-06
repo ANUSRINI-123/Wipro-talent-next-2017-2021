@@ -2,9 +2,9 @@ import java.io.*;
 import  java.util.*;
 class UserMainCode
 {
-public int nonRepeatingDigitsCount
-{
-int c=0;
+	public int nonRepeatingDigitsCount
+	{
+		int c=0;
 		int[] arr={0,0,0,0,0,0,0,0,0,0};
 		while(input1!=0)
 		{
