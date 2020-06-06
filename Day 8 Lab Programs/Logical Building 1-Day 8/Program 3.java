@@ -2,9 +2,9 @@ import java.io.*;
 import  java.util.*;
 class UserMainCode
 {
-public int oddDigitsSum(int input1)
-{
-int s=0,rem;
+	public int oddDigitsSum(int input1)
+	{
+		int s=0,rem;
 		while(input1!=0)
 		{
 			rem=input1%10;
