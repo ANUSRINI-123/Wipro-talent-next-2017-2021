@@ -1,38 +1,46 @@
 import java.io.*;
 import  java.util.*;
-class UserMainCode{
-public class Resul{
-  public final int output1;
-  public final int output2;
-  public Result(int out1,int out2){
-    output1=out1;
-    output2=out2;
-  }
+class UserMainCode
+{
+	public class Result
+	{
+  		public final int op1;
+ 		public final int op2;
+  		public Result(int ot1,int ot2){
+    		op1=ot1;
+    		op2=ot2;
+ 	}
 }
-public Result decSequence(int[] input1, int input2){
-    int count=0;
-		int max=0;
-		int maxi=0;
-		int f=0;
-		for(int i=0;i<input2-1;i++){
-			if(input1[i]>input1[i+1]){
-				if(f==0){
-					f=1;
-					count++;
-				}
-				max++;
-				maxi=max > maxi ? max:maxi;
+public Result decSequence(int[] input1, int input2)
+{
+	int c=0;
+	int m1=0;
+	int m2=0;
+	int f=0;
+	for(int i=0;i<input2-1;i++)
+	{
+		if(input1[i]>input1[i+1])
+		{
+			if(f==0)
+			{
+				f=1;
+				c++;
 			}
-			else{
-				if(f==1){
-					f=0;
-					max=0;
-				}
+			m1++;
+			m2=m1 > m2 ? m1:m2;
+		}
+		else
+		{
+			if(f==1)
+			{
+				f=0;
+				m1=0;
 			}
 		}
-		if(count>0)
-			maxi++;
-		Result r = new Result(count,maxi);
+	}
+	if(c>0)
+		m2++;
+	Result r = new Result(c,m2);
 		return r;
     }
 }
