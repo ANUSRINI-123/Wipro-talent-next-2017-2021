@@ -2,7 +2,7 @@ import java.io.*;
 import  java.util.*;
 class UserMainCode
 {
-	public class encodedArrays
+	public class Result
 	{
 		public final int op1;
   		public final int op2;
