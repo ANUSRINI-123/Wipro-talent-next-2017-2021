@@ -1,64 +1,72 @@
 import java.io.*;
 import  java.util.*;
+
 class UserMainCode{
-public int moveRobot(int input1, int input2,String input3,String input4){
-    String[] cur = input3.split("-");
-		String[] move = input4.split(" ");
-		int x = Integer.parseInt(cur[0]);
-		int y = Integer.parseInt(cur[1]);
-		String dir = cur[2];
-		int f=0;
-		for(String s:move){
-			if(s.equals("R")){
-				if(dir.equals("N"))
-					dir="E";
-				else if(dir.equals("E"))
-					dir="S";
-				else if(dir.equals("S"))
-					dir="W";
-				else
-					dir="N";
+
+	public String moveRobot(int input1,int input2,String input3,String input4){
+		
+		int X = input1;
+		int Y = input2;
+		String currentPos = input3;
+		String msg = input4;
+		
+		int currX = Integer.parseInt(currentPos.split("-")[0]);
+		int currY = Integer.parseInt(currentPos.split("-")[1]);
+		String currD = currentPos.split("-")[2]; 
+		String[] instructions = msg.split(" "); 
+		StringBuilder output = new StringBuilder();
+		
+		System.out.println(Arrays.toString(instructions));
+		System.out.println("Curr: " + currX + currY + currD);
+		
+		for (int i = 0; i < instructions.length; i++) {
+			System.out.print(instructions[i] + ":: ");
+			if (instructions[i].equals("M")) {
+				if (currD.equals("E") && (currX + 1 > X )) {
+					output.append("-ER");
+					break;
+				} 
+				if (currD.equals("W") && (currX - 1 < 0 )) {
+					output.append("-ER");
+					break;
+				} 
+				if (currD.equals("N") && (currY + 1 > Y )) {
+					output.append("-ER");
+					break;
+				} 
+				if (currD.equals("S") && (currY - 1 < 0 )) {
+					output.append("-ER");
+					break;
+				}
+
+				if (currD.equals("E")) currX++;
+				else if (currD.equals("W")) currX--;
+				else if (currD.equals("N")) currY++;
+				else if (currD.equals("S")) currY--;
+			} else {
+				if (currD.equals("E") && instructions[i].equals("L"))
+				    currD = "N";
+				else if (currD.equals("E") && instructions[i].equals("R"))
+					currD = "S";
+				else if (currD.equals("W") && instructions[i].equals("L"))
+					currD = "S";
+				else if (currD.equals("W") && instructions[i].equals("R"))
+					currD = "N";
+				else if (currD.equals("N") && instructions[i].equals("L"))
+					currD = "W";
+				else if (currD.equals("N") && instructions[i].equals("R"))
+					currD = "E";
+				else if (currD.equals("S") && instructions[i].equals("L"))
+					currD = "E";
+				else if (currD.equals("S") && instructions[i].equals("R"))
+					currD = "W";
 			}
-			else if(s.equals("L")){
-				if(dir.equals("N"))
-					dir="W";
-				else if(dir.equals("E"))
-					dir="N";
-				else if(dir.equals("S"))
-					dir="E";
-				else
-					dir="S";
-			}
-			else if(f != 1){
-				if(dir.equals("N")){
-					if(input2 > y ) 
-						y += 1; 
-					else
-						f=1;
-				}
-				else if(dir.equals("S")){
-					if(y>0)
-						y -=1;
-					else
-						f=1;
-				}
-				else if(dir.equals("E")){
-					if(input1 > x ) 
-						x += 1; 
-					else
-						f=1;
-				}
-				else{
-					if(x>0) 
-						x -=1;
-					else
-						f=1;
-				}
-			}
+			
+			output.delete(0, output.length());
+			output.append(currX + "-" + currY + "-" + currD);
+			System.out.println(output);
 		}
-		if(f != 1)
-			return String.valueOf(x)+"-"+String.valueOf(y)+"-"+String.valueOf(dir);
-		else
-			return String.valueOf(x)+"-"+String.valueOf(y)+"-"+String.valueOf(dir)+"-ER";
+		
+		return output.toString();
 	}
 }
