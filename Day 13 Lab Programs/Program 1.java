@@ -2,9 +2,9 @@ import java.io.*;
 import  java.util.*;
 class UserMainCode
 {
-public int nnGenerator(String input1)
-{
-int i,j;
+	public int nnGenerator(String input1)
+	{
+		int i,j;
 		String a="";
 		int[] x=new int[input1.length()];
 		for(i=0;i<x.length;i++)
